@@ -1,0 +1,11 @@
+<tr>
+  <td> <%= link_to post.title, authors_post_path(post) %></td>
+  <td></td>
+  <% if post.published? %>
+  <td> <%= link_to 'Unpublish', unpubish_authors_post_path(post.id), method: :put, class: 'btn btn-warning btn-sm' %></td>
+  <% else %>
+  <td> <%= link_to 'Publish', pubish_authors_post_path(post.id), method: :put, class: 'btn btn-success btn-sm' %></td>
+  <% end %>
+  <td> <%= link_to 'Edit', edit_authors_post_path(post), class: 'btn btn-primary btn-sm' %></td>
+  <td> <%= link_to 'Remove', authors_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
+</tr>

@@ -16,3 +16,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//
+document.addEventListener("turbolinks:load", function() {
+  tinymce.remove();
+  //This makes only body of the post to be loaded with turbolinks
+  //Rails does that fot us automatically (post_body)
+  tinymce.init({ height: 480,
+                 selector:'textarea#post_body',
+                 plugins: "codesample image media link code",
+                 toolbar: "undo redo | styleselect | bold italic link | codesample image media | code" });
+});

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield (:page_title)%> | F-code's Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/messages' %>
+    <div class="container <%= controller_name %> <%= action_name %>">
+      <%= yield %>
+    </div>
+  </body>
+</html>
